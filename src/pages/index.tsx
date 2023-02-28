@@ -1,11 +1,11 @@
-import { Card, Grid, Row, Text } from "@nextui-org/react";
+import { NextPage, GetStaticProps } from "next";
 
-import { NextPage } from "next";
-import { GetStaticProps } from 'next'
+import { Grid } from "@nextui-org/react";
 
-import { Layout } from "@/components/layouts";
-import { pokeApi } from "@/api";
-import { PokemonListResponse, SmallPokemon } from "@/interfaces";
+import { pokeApi } from "../api/index";
+import { Layout } from "../components/layouts/layout";
+import { PokemonListResponse, SmallPokemon } from "../interfaces";
+import { PokemonCard } from "../components/pokemon";
 
 interface Props {
   pokemons: SmallPokemon[];
@@ -15,33 +15,14 @@ const HomePage: NextPage<Props> = ({ pokemons }) => {
 
   return (
     <Layout title='Listado de Pokémons'>
-
       <Grid.Container gap={2} justify='flex-start'>
         {
-          pokemons.map(({ id, name, img }) => (
-            <Grid xs={6} sm={2} xl={1} key={id}>
-              <Card hoverable clickable>
-                <Card.Body css={{ p: 1 }}>
-                  <Card.Image
-                    src={img}
-                    width='100%'
-                    height={140}
-                  />
-                </Card.Body>
-                <Card.Footer>
-                  <Row justify='space-between'>
-                    <Text transform='capitalize'> {name} </Text>
-                    <Text> #{id} </Text>
-                  </Row>
-                </Card.Footer>
-              </Card>
-            </Grid>
-
-          )
-          )
+          pokemons.map((pokemon) => (
+            <PokemonCard key={pokemon.id} pokemon={pokemon} />
+          ))
         }
-      </Grid.Container>
 
+      </Grid.Container>
     </Layout>
   )
 }
@@ -53,7 +34,7 @@ const HomePage: NextPage<Props> = ({ pokemons }) => {
 //- The page must be pre-rendered (for SEO) and be very fast — getStaticProps generates HTML and JSON files, both of which can be cached by a CDN for performance.
 export const getStaticProps: GetStaticProps = async (ctx) => {
 
-  const { data } = await pokeApi.get<PokemonListResponse>('/pokemon?linit=151');
+  const { data } = await pokeApi.get<PokemonListResponse>('/pokemon?limit=151');
 
   const pokemons: SmallPokemon[] = data.results.map((poke, i) => ({
     ...poke,

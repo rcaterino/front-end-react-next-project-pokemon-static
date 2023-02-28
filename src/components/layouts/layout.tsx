@@ -5,13 +5,14 @@ import { Navbar } from "../ui";
 
 interface Props {
   title?: string;
+  children: any;
 }
 
 export const  Layout: FC<Props> = ({ children, title }) => {
   return (
-    <div>
+    <>
         <Head>
-            <title>{title || 'Pokémon App'}</title>
+            <title>{title || 'PokémonApp'}</title>
             <meta name="author" content="Ricardo Caterino" />
             <meta name="description" content={`Información sobre el pokémon ${ title}`} />
             <meta name="keywords" content={`${ title }, pokemon, pokedex,`} />
@@ -24,7 +25,6 @@ export const  Layout: FC<Props> = ({ children, title }) => {
         }}>
             { children }
         </main>
-
-    </div>
+    </>
   );
 }
