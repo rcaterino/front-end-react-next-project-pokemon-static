@@ -1,3 +1,9 @@
+Este es un proyecto realizado con fines de estudio durante mi curso sobre Next.js, impartido por Fernando Herrera en la plataforma Udemy.com.
+
+Durante este proyecto en particular aprendimos a generar de manera estática nuestra aplicación, cosa que es muy beneficioso en los casos donde sabemos de antemano la información que necesitamos generar de manera estática y que esta no va a cambiar. Tambien aprendimos a interacturar con el localStorage aunque la aplicación se generase de manera estática; además, implementamos enrutamiento dinámico utilizando para ello el id del pokemon y también con el name para mostrar la información detallada del pokemon. Implementamos una pantalla de favoritos para listar los favoritos guardados en localStorage, utilizamos una librería externa llamada Canvas-Confetti para aplicar animación de confetis cuando el pokemon está incluido en favoritos y finalizando el proyecto optimizamos la data necesaria del pokémon para mejorar nuestra aplicación y mejorar nuestro contenido estático de la aplicación.
+
+Link del curso: (https://www.udemy.com/share/10610k3@anSJm_WmLABr0ZD2Na96WMPKvEN42e-Y3HS07ABs_JoI1d7xKIu9LrC0QOZsNv6sew==/)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
