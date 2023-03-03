@@ -1,5 +1,3 @@
-
-
 const toggleFavorites = (id: number) => {
 
     let favorites: number[] = JSON.parse(localStorage.getItem('favorites') || '[]');
@@ -35,5 +33,5 @@ const pokemons = (): number[] => {
 export default {
     toggleFavorites,
     existInFavorites,
-    pokemons,
+    pokemons
 }
