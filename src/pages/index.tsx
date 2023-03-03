@@ -1,6 +1,6 @@
 import { NextPage, GetStaticProps } from "next";
 
-import { Grid } from "@nextui-org/react";
+import { Grid, Image } from "@nextui-org/react";
 
 import { pokeApi } from "../api/index";
 import { Layout } from "../components/layouts/layout";
@@ -21,7 +21,6 @@ const HomePage: NextPage<Props> = ({ pokemons }) => {
             <PokemonCard key={pokemon.id} pokemon={pokemon} />
           ))
         }
-
       </Grid.Container>
     </Layout>
   )

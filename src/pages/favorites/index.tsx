@@ -7,6 +7,7 @@ import { Layout } from '../../components/layouts';
 import { localFavorites } from '../../utils';
 import { FavoritePokemons } from '../../components/pokemon';
 
+
 const FavoritesPage = () => {
 
   const [favoritePokemons, setfavoritePokemons] = useState<number[]>([]);
