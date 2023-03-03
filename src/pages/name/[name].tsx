@@ -7,8 +7,7 @@ import confetti from 'canvas-confetti';
 import { pokeApi } from "../../api";
 import { Layout } from "../../components/layouts";
 import { Pokemon, PokemonListResponse } from "../../interfaces";
-import { localFavorites } from "../../utils";
-
+import { getPokemonInfo, localFavorites } from "../../utils";
 interface Props {
   pokemon: Pokemon;
 }
@@ -98,13 +97,11 @@ const PokemonByNamePage: NextPage<Props> = ({ pokemon }) => {
   )
 }
 
-
 // You should use getStaticPaths if you’re statically pre-rendering pages that use dynamic routes
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
 
   const { data } = await pokeApi.get<PokemonListResponse>('/pokemon?limit151')
   const pokemonNames: string[] = data.results.map(pokemon => pokemon.name)
-
 
   return {
     paths: pokemonNames.map(name => ({
@@ -113,7 +110,6 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
     fallback: false
   }
 }
-
 
 // You should use getStaticProps when:
 //- The data required to render the page is available at build time ahead of a user’s request.
@@ -124,11 +120,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const { name } = params as { name: string };
 
-  const { data } = await pokeApi.get<Pokemon>(`/pokemon/${name}`);
-
   return {
     props: {
-      pokemon: data
+      pokemon: await getPokemonInfo(name)
     }
   }
 }
