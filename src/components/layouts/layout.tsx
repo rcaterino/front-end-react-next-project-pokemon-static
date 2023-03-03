@@ -5,7 +5,7 @@ import { Footer, Navbar } from "../ui";
 
 interface Props {
   title?: string;
-  children: any;
+  children?: React.ReactNode;
 }
 
 const origin = (typeof window === 'undefined') ? '' : window.location.origin;
