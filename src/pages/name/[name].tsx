@@ -37,9 +37,9 @@ const PokemonByNamePage: NextPage<Props> = ({ pokemon }) => {
 
   return (
     <Layout title={pokemon.name}>
-      <Grid.Container css={{ marginTop: '5px' }} gap={2}>
-        <Grid xs={12} sm={4} >
-          <Card isHoverable css={{ padding: '30px' }}>
+      <Grid.Container css={{ marginTop: '5px' }} gap={1}>
+        <Grid xs={12} sm={4}  xl={2} >
+          <Card isHoverable css={{ padding: '10px' }}>
             <Card.Body>
               <Card.Image
                 src={pokemon.sprites.other?.dream_world.front_default || '/no-image.png'}
@@ -50,10 +50,10 @@ const PokemonByNamePage: NextPage<Props> = ({ pokemon }) => {
             </Card.Body>
           </Card>
         </Grid>
-        <Grid xs={12} sm={8}>
+        <Grid xs={12} sm={8} xl={2}>
           <Card>
-            <Card.Header css={{ display: 'flex', justifyContent: 'space-between' }}>
-              <Text h1 transform='capitalize'>{pokemon.name}</Text>
+            <Card.Header css={{ display: 'container', justifyContent: 'space-between' }}>
+              <Text h3 transform='capitalize'>{pokemon.name}</Text>
               <Button
                 color="gradient"
                 ghost={!isInFavorites}
@@ -63,7 +63,7 @@ const PokemonByNamePage: NextPage<Props> = ({ pokemon }) => {
               </Button>
             </Card.Header>
             <Card.Body>
-              <Text size={30}>Sprites:</Text>
+              <Text size={20}>Sprites:</Text>
               <Container direction='row' display='flex' gap={0}>
                 <Image
                   src={pokemon.sprites.front_default}
