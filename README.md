@@ -1,10 +1,10 @@
 # Proyecto Pokémon Static 🚀
 
-¡Bienvenido a Pokémon Static! Este proyecto es el resultado de un emocionante viaje de aprendizaje durante mi curso sobre Next.js, impartido por el increíble Fernando Herrera en la plataforma Udemy.com.
+¡Bienvenido a Pokémon Static! Este proyecto es el resultado de un emocionante viaje de aprendizaje durante mi curso sobre Next.js.
 
 ## Descripción del Proyecto 📚
 
-Durante esta emocionante experiencia de aprendizaje, exploramos los entresijos de Next.js y creamos una aplicación estática que aprovecha la API de Pokémon. Aquí hay un resumen de lo que logramos:
+Exploramos los entresijos de Next.js y creamos una aplicación estática que aprovecha la API de Pokémon. Aquí hay un resumen de lo que logramos:
 
 - **Generación Estática Avanzada:** Aprendimos cómo generar de manera estática nuestra aplicación, lo cual es especialmente útil cuando sabemos que la información que necesitamos es constante y no cambiará con el tiempo.
 
@@ -20,7 +20,6 @@ Durante esta emocionante experiencia de aprendizaje, exploramos los entresijos d
 
 ## Enlaces de Interés
 
-- [Curso de Fernando Herrera en Udemy](https://www.udemy.com/share/10610k3@anSJm_WmLABr0ZD2Na96WMPKvEN42e-Y3HS07ABs_JoI1d7xKIu9LrC0QOZsNv6sew==/)
 - [Sitio de Next.js](https://nextjs.org/)
 - [Axios](https://axios-http.com/)
 - [API de Pokémon](https://pokeapi.co/api/v2)
